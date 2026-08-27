@@ -784,14 +784,9 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
                 <input value={content.sections.blogPage.articlesSubheading} onChange={(e) => updateBlogPage({ articlesSubheading: e.target.value })} className={inputClass} />
               </Field>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Empty-state message" hint="Shown when there are no posts yet.">
-                <input value={content.sections.blogPage.emptyStateText} onChange={(e) => updateBlogPage({ emptyStateText: e.target.value })} className={inputClass} />
-              </Field>
-              <Field label={'Featured post "Read the guide" link text'}>
-                <input value={content.sections.blogPage.featuredLinkText} onChange={(e) => updateBlogPage({ featuredLinkText: e.target.value })} className={inputClass} />
-              </Field>
-            </div>
+            <Field label="Empty-state message" hint="Shown when there are no posts yet.">
+              <input value={content.sections.blogPage.emptyStateText} onChange={(e) => updateBlogPage({ emptyStateText: e.target.value })} className={inputClass} />
+            </Field>
             <p className="text-xs font-medium text-stone-500">Sidebar promo card (shown on the listing page)</p>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Promo card heading">
@@ -805,32 +800,11 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
               <input value={content.sections.blogPage.ctaBody} onChange={(e) => updateBlogPage({ ctaBody: e.target.value })} className={inputClass} />
             </Field>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label={'"Back to all guides" link text'}>
-                <input value={content.sections.blogPage.backToGuidesText} onChange={(e) => updateBlogPage({ backToGuidesText: e.target.value })} className={inputClass} />
-              </Field>
               <Field label={'"Quick Answer" callout label'}>
                 <input value={content.sections.blogPage.quickAnswerLabel} onChange={(e) => updateBlogPage({ quickAnswerLabel: e.target.value })} className={inputClass} />
               </Field>
               <Field label={'"In This Guide" box label'}>
                 <input value={content.sections.blogPage.tocLabel} onChange={(e) => updateBlogPage({ tocLabel: e.target.value })} className={inputClass} />
-              </Field>
-              <Field label="Related Guides heading">
-                <input value={content.sections.blogPage.relatedGuidesHeading} onChange={(e) => updateBlogPage({ relatedGuidesHeading: e.target.value })} className={inputClass} />
-              </Field>
-            </div>
-            <p className="text-xs font-medium text-stone-500">Sidebar (shown next to every article)</p>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Recommended tour badge">
-                <input value={content.sections.blogPage.sidebarRecommendedBadge} onChange={(e) => updateBlogPage({ sidebarRecommendedBadge: e.target.value })} className={inputClass} />
-              </Field>
-              <Field label="Related Articles heading">
-                <input value={content.sections.blogPage.sidebarRelatedHeading} onChange={(e) => updateBlogPage({ sidebarRelatedHeading: e.target.value })} className={inputClass} />
-              </Field>
-              <Field label="Compare-all-shows link text">
-                <input value={content.sections.blogPage.sidebarCompareLinkText} onChange={(e) => updateBlogPage({ sidebarCompareLinkText: e.target.value })} className={inputClass} />
-              </Field>
-              <Field label={'Mid-article promo card "Recommended for you" label'}>
-                <input value={content.sections.blogPage.promoRecommendedText} onChange={(e) => updateBlogPage({ promoRecommendedText: e.target.value })} className={inputClass} />
               </Field>
             </div>
             <p className="text-xs font-medium text-stone-500">Sidebar promo card (shown on every individual article page)</p>

@@ -379,7 +379,7 @@ export default function PostForm({
               </Field>
               <div className="rounded-2xl border border-canal-blue/20 bg-canal-blue/5 p-6">
                 <p className="text-sm font-semibold text-stone-900">{post.ctaHeading || "Ready to book?"}</p>
-                <p className="mt-1 text-sm text-stone-900/70">{post.ctaBody}</p>
+                <p className="mt-1 text-sm text-stone-900/70 whitespace-pre-line">{post.ctaBody}</p>
                 <span className="mt-4 inline-flex rounded-full bg-canal-orange px-5 py-2.5 text-sm font-semibold text-white">
                   {post.ctaButtonText || "See Price Comparison"}
                 </span>

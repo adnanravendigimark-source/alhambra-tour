@@ -130,18 +130,11 @@ export interface BlogPageSection {
   articlesHeading: string;
   articlesSubheading: string;
   emptyStateText: string;
-  featuredLinkText: string;
   ctaHeading: string;
   ctaBody: string;
   ctaButtonText: string;
-  backToGuidesText: string;
   quickAnswerLabel: string;
   tocLabel: string;
-  relatedGuidesHeading: string;
-  sidebarRelatedHeading: string;
-  sidebarRecommendedBadge: string;
-  sidebarCompareLinkText: string;
-  promoRecommendedText: string;
   postCtaHeading: string;
   postCtaBody: string;
   postCtaButtonText: string;
@@ -430,21 +423,14 @@ export const DEFAULT_SECTIONS: HomepageSections = {
     articlesHeading: "Latest Travel Guides",
     articlesSubheading: "Comprehensive articles written by local experts on Alhambra tickets, tours, and history.",
     emptyStateText: "No articles published yet — check back soon.",
-    featuredLinkText: "Read the full guide",
     ctaHeading: "Book Your Alhambra Tour Today",
     ctaBody: "Guaranteed Nasrid Palaces entrance, skip-the-line access, and expert local guides.",
     ctaButtonText: "Compare Alhambra Tours & Tickets →",
-    backToGuidesText: "← All travel guides",
     quickAnswerLabel: "Quick Answer",
     tocLabel: "In This Guide",
     postCtaHeading: "Compare Alhambra Tours & Tickets",
     postCtaBody: "Find the best guided tours, ticket prices, and time slots in one place.",
     postCtaButtonText: "View Tour Options →",
-    relatedGuidesHeading: "Related Alhambra Guides",
-    sidebarRelatedHeading: "Related Alhambra Guides",
-    sidebarRecommendedBadge: "Recommended",
-    sidebarCompareLinkText: "Compare all Alhambra tours →",
-    promoRecommendedText: "Recommended Tour",
   },
 };
 

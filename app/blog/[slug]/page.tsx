@@ -155,7 +155,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-[10px] font-bold text-white">
                   {author.initials}
                 </span>
-                <span className="font-semibold text-slate-900">By {author.name}</span>
+                <span className="font-semibold text-slate-900">
+                  By {author.name}
+                  {author.role && <span className="font-normal text-slate-500"> · {author.role}</span>}
+                </span>
               </span>
             </div>
 
@@ -197,7 +200,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     <p className="font-display text-base font-bold text-slate-900">
                       {post.ctaHeading}
                     </p>
-                    <p className="mt-0.5 text-xs text-slate-600">
+                    <p className="mt-0.5 text-xs text-slate-600 whitespace-pre-line">
                       {post.ctaBody}
                     </p>
                   </div>
