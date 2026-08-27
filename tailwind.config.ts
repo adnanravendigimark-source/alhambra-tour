@@ -26,9 +26,9 @@ const config: Config = {
           700: "#964123",
         },
         ivory: {
-          DEFAULT: "#F8F3E9",
+          DEFAULT: "#FAFAF8",
           50: "#fdfbf7",
-          100: "#F8F3E9",
+          100: "#FAFAF8",
           200: "#f0e6d4",
         },
         gold: {
@@ -74,7 +74,7 @@ const config: Config = {
       },
       backgroundImage: {
         mosaic:
-          "radial-gradient(circle at 15% 25%, rgba(15, 92, 86,0.15) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(184, 134, 59,0.15) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(248,243,233,0.85) 0, transparent 50%)",
+          "radial-gradient(circle at 15% 25%, rgba(15, 92, 86,0.15) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(184, 134, 59,0.15) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(250, 250, 248,0.85) 0, transparent 50%)",
         "gold-gradient":
           "linear-gradient(135deg, #D4AF6A 0%, #E9D09C 50%, #B0925A 100%)",
       },

@@ -6,7 +6,7 @@ export default async function EveningCruise() {
   const s = sections.tower;
 
   return (
-    <section id="generalife" className="bg-[#F8F3E9] py-20 border-t border-[#E5D6BE]">
+    <section id="generalife" className="bg-[#FAFAF8] py-20 border-t border-[#E5D6BE]">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:px-8 lg:grid-cols-2 lg:items-center">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-md bg-[#B8863B]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#B8863B]">

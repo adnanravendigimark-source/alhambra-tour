@@ -28,7 +28,7 @@ export default function FaqAccordion({ faqs }: { faqs: FAQ[] }) {
                 className={`ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${
                   open
                     ? "rotate-45 bg-[#B8863B] text-white"
-                    : "bg-[#F8F3E9] text-[#0F5C56]"
+                    : "bg-[#FAFAF8] text-[#0F5C56]"
                 }`}
               >
                 +

@@ -17,7 +17,7 @@ export default async function RelatedPosts({ slug }: { slug: string }) {
             href={`/blog/${post.slug}`}
             className="group flex gap-4 rounded-2xl border border-[#E5D6BE] bg-white p-4 transition-all hover:border-[#B8863B]/50 hover:shadow-md"
           >
-            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-[#F8F3E9]">
+            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl bg-[#FAFAF8]">
               <SafeImage src={post.image} alt={post.imageAlt} fill quality={75} sizes="100px" className="object-cover transition group-hover:scale-105" />
             </div>
             <div className="flex flex-col justify-center">

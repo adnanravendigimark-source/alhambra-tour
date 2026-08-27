@@ -13,7 +13,7 @@ export default async function FeaturedTour() {
   if (!tour) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E5D6BE] bg-[#F8F3E9]/95 px-4 py-3 shadow-[0_-8px_25px_rgba(0,0,0,0.12)] backdrop-blur-md sm:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E5D6BE] bg-[#FAFAF8]/95 px-4 py-3 shadow-[0_-8px_25px_rgba(0,0,0,0.12)] backdrop-blur-md sm:hidden">
       <div className="flex items-center gap-3">
         <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
           <SafeImage src={tour.image} alt={tour.imageAlt} fill quality={75} sizes="48px" className="object-cover" />

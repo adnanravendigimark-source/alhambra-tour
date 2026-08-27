@@ -38,7 +38,7 @@ export default function Logo({
           strokeLinejoin="round"
         />
         {/* Tower Base Wall */}
-        <rect x="10" y="20" width="36" height="28" rx="1" fill="#F8F3E9" stroke="#B8863B" strokeWidth="2" />
+        <rect x="10" y="20" width="36" height="28" rx="1" fill="#FAFAF8" stroke="#B8863B" strokeWidth="2" />
         {/* Outer Horseshoe Arch */}
         <path
           d="M17 48V32C17 25 21 21 28 21C35 21 39 25 39 32V48"

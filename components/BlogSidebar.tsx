@@ -87,7 +87,7 @@ export default function BlogSidebar({
                 href={`/blog/${post.slug}`}
                 className="group flex items-center gap-3"
               >
-                <div className="relative h-13 w-16 shrink-0 aspect-[4/3] overflow-hidden rounded-xl bg-[#F8F3E9]">
+                <div className="relative h-13 w-16 shrink-0 aspect-[4/3] overflow-hidden rounded-xl bg-[#FAFAF8]">
                   <SafeImage
                     src={post.image}
                     alt={post.imageAlt || post.title}
@@ -113,7 +113,7 @@ export default function BlogSidebar({
       )}
 
       {/* Compare Alhambra Tours Promo Card */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
+      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#FAFAF8] via-white to-[#FAFAF8] p-6 text-center shadow-xs">
         <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F5C56] text-[#D4AF6A]">
           <TicketIcon className="h-5 w-5" />
         </div>

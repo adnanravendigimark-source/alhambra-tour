@@ -5,7 +5,7 @@ export default async function WhatYouSee() {
   const s = sections.why;
 
   return (
-    <section className="bg-gradient-to-b from-[#F8F3E9] via-white to-[#F8F3E9] py-20">
+    <section className="bg-gradient-to-b from-[#FAFAF8] via-white to-[#FAFAF8] py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#B8863B]">
@@ -37,7 +37,7 @@ export default async function WhatYouSee() {
               <h3 className="font-serif text-xl font-bold text-[#0F5C56]">{s.learnHeading}</h3>
               <ul className="mt-5 space-y-3">
                 {s.learn.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 rounded-xl bg-[#F8F3E9]/80 border border-[#E5D6BE]/70 p-3.5 text-sm text-[#29302A]">
+                  <li key={i} className="flex items-start gap-3 rounded-xl bg-[#FAFAF8]/80 border border-[#E5D6BE]/70 p-3.5 text-sm text-[#29302A]">
                     <span className="text-[#B8863B] font-bold">◆</span>
                     <span>{item}</span>
                   </li>

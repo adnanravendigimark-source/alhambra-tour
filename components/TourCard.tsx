@@ -25,7 +25,7 @@ export default function TourCard({
       }`}
     >
       {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-[#F8F3E9]">
+      <div className="relative aspect-[16/10] overflow-hidden bg-[#FAFAF8]">
         <SafeImage
           src={tour.image}
           alt={tour.imageAlt}
@@ -63,7 +63,7 @@ export default function TourCard({
           {tour.includes.slice(0, 3).map((item) => (
             <div
               key={item}
-              className="flex items-start gap-2 rounded-md bg-[#F8F3E9]/80 px-2.5 py-1.5 text-[11.5px] text-[#29302A] border border-[#E5D6BE]/70"
+              className="flex items-start gap-2 rounded-md bg-[#FAFAF8]/80 px-2.5 py-1.5 text-[11.5px] text-[#29302A] border border-[#E5D6BE]/70"
             >
               <span className="mt-0.5 text-[#B8863B] font-bold shrink-0">✓</span>
               <span className="leading-tight font-medium line-clamp-1">{item}</span>

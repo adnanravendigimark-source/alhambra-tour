@@ -69,11 +69,11 @@ export default function BlogIndexSidebar({
                   className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-xs font-semibold transition ${
                     isSelected
                       ? "bg-[#B8863B]/10 text-[#B8863B] font-bold border border-[#B8863B]/30"
-                      : "text-[#29302A] hover:bg-[#F8F3E9] hover:text-[#B8863B]"
+                      : "text-[#29302A] hover:bg-[#FAFAF8] hover:text-[#B8863B]"
                   }`}
                 >
                   <span>{cat.name}</span>
-                  <span className="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#F8F3E9] px-1.5 text-[10px] font-bold text-[#0F5C56]">
+                  <span className="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#FAFAF8] px-1.5 text-[10px] font-bold text-[#0F5C56]">
                     {cat.count}
                   </span>
                 </button>
@@ -94,7 +94,7 @@ export default function BlogIndexSidebar({
                 href={`/blog/${post.slug}`}
                 className="group flex items-center gap-3"
               >
-                <div className="relative h-13 w-16 shrink-0 aspect-[4/3] overflow-hidden rounded-xl bg-[#F8F3E9]">
+                <div className="relative h-13 w-16 shrink-0 aspect-[4/3] overflow-hidden rounded-xl bg-[#FAFAF8]">
                   <SafeImage
                     src={post.image}
                     alt={post.imageAlt || post.title}
@@ -120,7 +120,7 @@ export default function BlogIndexSidebar({
       )}
 
       {/* Book Your Alhambra Tour Promo Card */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
+      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#FAFAF8] via-white to-[#FAFAF8] p-6 text-center shadow-xs">
         <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F5C56] text-[#D4AF6A]">
           <TicketIcon className="h-5 w-5" />
         </div>

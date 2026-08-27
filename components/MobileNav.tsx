@@ -54,7 +54,7 @@ export default function MobileNav({
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute inset-x-0 top-full z-40 max-h-[80vh] overflow-y-auto border-b border-[#E5D6BE] bg-[#F8F3E9] text-[#29302A] shadow-2xl">
+          <div className="absolute inset-x-0 top-full z-40 max-h-[80vh] overflow-y-auto border-b border-[#E5D6BE] bg-[#FAFAF8] text-[#29302A] shadow-2xl">
             <nav className="flex flex-col px-5 py-3">
               {navLinks.map((link) => (
                 <Link

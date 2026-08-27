@@ -32,7 +32,7 @@ export default async function BlogIndexPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#F8F3E9]">
+      <main className="min-h-screen bg-[#FAFAF8]">
         {/* Blog Hero Banner */}
         <section className="relative overflow-hidden bg-[#0F5C56] text-white">
           <div className="absolute inset-0">

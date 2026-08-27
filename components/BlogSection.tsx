@@ -11,7 +11,7 @@ export default async function BlogSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="bg-[#F8F3E9] py-16 sm:py-24 border-t border-[#E5D6BE]" id="blog-guides">
+    <section className="bg-[#FAFAF8] py-16 sm:py-24 border-t border-[#E5D6BE]" id="blog-guides">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
@@ -38,7 +38,7 @@ export default async function BlogSection() {
               key={post.slug}
               className="group flex flex-col overflow-hidden rounded-2xl border border-[#E5D6BE] bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#B8863B]/50 hover:shadow-lg"
             >
-              <Link href={`/blog/${post.slug}`} className="relative aspect-[16/10] overflow-hidden bg-[#F8F3E9]">
+              <Link href={`/blog/${post.slug}`} className="relative aspect-[16/10] overflow-hidden bg-[#FAFAF8]">
                 <SafeImage
                   src={post.image}
                   alt={post.imageAlt || post.title}

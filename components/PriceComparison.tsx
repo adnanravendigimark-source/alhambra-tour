@@ -33,8 +33,8 @@ export default async function PriceComparison() {
             {tours.map((tour, i) => (
               <tr
                 key={tour.id}
-                className={`transition hover:bg-[#F8F3E9] ${
-                  tour.featured ? "bg-[#F8F3E9]/70 font-medium" : i % 2 ? "bg-stone-50/60" : ""
+                className={`transition hover:bg-[#FAFAF8] ${
+                  tour.featured ? "bg-[#FAFAF8]/70 font-medium" : i % 2 ? "bg-stone-50/60" : ""
                 }`}
               >
                 <td className="px-6 py-4 font-serif font-bold text-[#0F5C56]">{tour.title}</td>

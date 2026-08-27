@@ -5,7 +5,7 @@ export default async function Hero() {
   const content = await getHomepageContent();
 
   return (
-    <section id="top" className="relative w-full bg-[#F8F3E9] text-[#29302A] overflow-hidden">
+    <section id="top" className="relative w-full bg-[#FAFAF8] text-[#29302A] overflow-hidden">
       {/* Background Hero Image & Smooth Gradient Blending */}
       <div className="relative min-h-[580px] lg:min-h-[640px] flex items-center">
         {/* Right side image container */}
@@ -37,14 +37,14 @@ export default async function Hero() {
             className="absolute inset-0 lg:hidden"
             style={{
               background:
-                "linear-gradient(to top, #F8F3E9 0%, rgba(248,243,233,0.92) 60%, rgba(248,243,233,0.85) 85%, rgba(248,243,233,0.5) 100%)",
+                "linear-gradient(to top, #FAFAF8 0%, rgba(250, 250, 248,0.92) 60%, rgba(250, 250, 248,0.85) 85%, rgba(250, 250, 248,0.5) 100%)",
             }}
           />
           <div
             className="hidden lg:block absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right, #F8F3E9 0%, rgba(248,243,233,0.65) 12%, rgba(248,243,233,0.15) 24%, transparent 38%)",
+                "linear-gradient(to right, #FAFAF8 0%, rgba(250, 250, 248,0.65) 12%, rgba(250, 250, 248,0.15) 24%, transparent 38%)",
             }}
           />
         </div>
@@ -87,7 +87,7 @@ export default async function Hero() {
 
               <a
                 href={content.heroCtaSecondaryHref || "#prices"}
-                className="inline-flex items-center gap-2 rounded-xl border border-[#29302A]/30 bg-[#F8F3E9]/80 hover:bg-[#E5D6BE]/60 px-6 py-3.5 text-sm font-bold tracking-wider uppercase text-[#29302A] backdrop-blur-xs transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#29302A]/30 bg-[#FAFAF8]/80 hover:bg-[#E5D6BE]/60 px-6 py-3.5 text-sm font-bold tracking-wider uppercase text-[#29302A] backdrop-blur-xs transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-[#B8863B]">
                   <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
@@ -119,7 +119,7 @@ export default async function Hero() {
       </div>
 
       {/* Feature Highlights Bar (Below Hero Image) */}
-      <div className="border-t border-[#E5D6BE] bg-[#F8F3E9] py-7 px-4 sm:px-6 lg:px-8">
+      <div className="border-t border-[#E5D6BE] bg-[#FAFAF8] py-7 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Item 1 */}
           <div className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
