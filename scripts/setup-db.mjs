@@ -3,7 +3,7 @@
 // What it does:
 //   1. Creates every table the app needs, if they don't already exist.
 //   2. If a table is empty, seeds it from the matching file in /data (the
-//      real Barcelona Flamenco starter content) so the site has
+//      real Alhambra Tour starter content) so the site has
 //      real tours/posts/FAQs/homepage copy from the first run.
 //
 // How to run it:

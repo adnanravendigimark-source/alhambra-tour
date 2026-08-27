@@ -511,7 +511,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             <Field label="Small note under the bullets">
               <textarea rows={2} value={content.sections.why.note} onChange={(e) => updateWhy({ note: e.target.value })} className={inputClass} />
             </Field>
-            <Field label="Optional 3rd list heading" hint="Leave blank and empty to hide this block entirely — e.g. a “Where the top tablaos are located” list.">
+            <Field label="Optional 3rd list heading" hint="Leave blank and empty to hide this block entirely — e.g. a “Where the top viewpoints are” list.">
               <input value={content.sections.why.extraHeading} onChange={(e) => updateWhy({ extraHeading: e.target.value })} className={inputClass} />
             </Field>
             <Field label="Optional 3rd list items">
@@ -646,7 +646,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
               <RichTextEditor value={content.sections.price.subheading} onChange={(html) => updatePrice({ subheading: html })} minHeight="4rem" />
             </Field>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Column: item name" hint='e.g. "Flamenco Venue & Show"'>
+              <Field label="Column: item name" hint='e.g. "Nasrid Palaces Ticket"'>
                 <input value={content.sections.price.itemLabel} onChange={(e) => updatePrice({ itemLabel: e.target.value })} className={inputClass} />
               </Field>
               <Field label="Column: price" hint='e.g. "Price"'>

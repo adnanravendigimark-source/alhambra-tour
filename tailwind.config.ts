@@ -56,18 +56,6 @@ const config: Config = {
           800: "#29302A",
           900: "#1d221e",
         },
-        flamenco: {
-          red: "rgb(var(--color-canal-primary) / <alpha-value>)",
-          gold: "rgb(var(--color-canal-blue) / <alpha-value>)",
-          rose: "rgb(var(--color-gold-400) / <alpha-value>)",
-          ink: "rgb(var(--color-canal-ink) / <alpha-value>)",
-          crimson: "#C8643F",
-          amber: "#C79A52",
-          ruby: "#C8643F",
-          charcoal: "#29302A",
-          wine: "#263D2A",
-          garnet: "#263D2A",
-        },
         canal: {
           blue: "rgb(var(--color-canal-blue) / <alpha-value>)",
           primary: "rgb(var(--color-canal-primary) / <alpha-value>)",
@@ -87,10 +75,6 @@ const config: Config = {
       backgroundImage: {
         mosaic:
           "radial-gradient(circle at 15% 25%, rgba(38,61,42,0.15) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(200,100,63,0.15) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(248,243,233,0.85) 0, transparent 50%)",
-        "flamenco-gradient":
-          "linear-gradient(135deg, #263D2A 0%, #2d4932 50%, #C8643F 100%)",
-        "flamenco-hover":
-          "linear-gradient(135deg, #1e3021 0%, #263D2A 50%, #b5532f 100%)",
         "gold-gradient":
           "linear-gradient(135deg, #C79A52 0%, #e0be82 50%, #b0843b 100%)",
       },
