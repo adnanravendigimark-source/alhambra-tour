@@ -290,15 +290,16 @@ export default function TourForm({
       </div>
 
       <div>
-        <label className={labelClass}>Price table: "Drinks / Dinner" column (optional)</label>
+        <label className={labelClass}>Price table: 2nd feature column (optional)</label>
         <input
           value={tour.priceTableFeature || ""}
           onChange={(e) => update("priceTableFeature", e.target.value)}
           className={inputClass}
-          placeholder="e.g. Tapas & Sangria"
+          placeholder="e.g. Included"
         />
         <p className="mt-1 text-xs text-stone-500">
-          Shown in the homepage price-comparison table's "Drinks / Dinner" column for this tour. Leave
+          Shown in the homepage price-comparison table's second feature column for this tour (column
+          heading is set in Homepage → Price section, currently "Nasrid Palaces Access"). Leave
           blank to show "No".
         </p>
       </div>
