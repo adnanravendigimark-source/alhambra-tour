@@ -37,6 +37,17 @@ export interface TourSection {
   subheading: string;
 }
 
+// The 4 trust badges in the strip directly under the hero photo (Instant
+// E-Tickets / Expert Local Guides / Skip the Line / 24/7 Support). Fixed at
+// exactly 4 items — each is rendered at a matching index against a
+// hardcoded icon in Hero.tsx, so this is edited as 4 fixed title/body pairs
+// in the admin rather than an add/remove RepeatableList (unlike
+// HighlightCard below), to avoid an icon-less 5th badge or an empty slot.
+export interface HeroFeatureItem {
+  title: string;
+  body: string;
+}
+
 export interface HighlightCard {
   icon: string;
   title: string;
@@ -142,6 +153,7 @@ export interface BlogPageSection {
 
 export interface HomepageSections {
   tours: TourSection;
+  heroFeatures: HeroFeatureItem[];
   highlights: HighlightsSection;
   why: WhySection;
   tower: TowerSection;
@@ -271,6 +283,12 @@ export const DEFAULT_SECTIONS: HomepageSections = {
     subheading:
       "Explore the majestic Moorish complex with official expert guides — access Nasrid Palaces, Generalife Gardens, and Alcazaba Fortress without waiting in long queues.",
   },
+  heroFeatures: [
+    { title: "Instant E-Tickets", body: "Get your tickets instantly by email." },
+    { title: "Expert Local Guides", body: "Official guides with in-depth knowledge." },
+    { title: "Skip the Line", body: "Save time with priority access." },
+    { title: "24/7 Support", body: "We're here to help you before and during your visit." },
+  ],
   highlights: {
     eyebrow: "Unforgettable Heritage",
     heading: "What Makes an Alhambra Tour Special",
@@ -516,6 +534,10 @@ function rowToHomepage(row: any): HomepageContent {
     })(),
     sections: {
       tours: { ...DEFAULT_SECTIONS.tours, ...sectionsRaw.tours },
+      heroFeatures: DEFAULT_SECTIONS.heroFeatures.map((def, i) => ({
+        title: sectionsRaw.heroFeatures?.[i]?.title || def.title,
+        body: sectionsRaw.heroFeatures?.[i]?.body || def.body,
+      })),
       highlights: { ...DEFAULT_SECTIONS.highlights, ...sectionsRaw.highlights },
       why: { ...DEFAULT_SECTIONS.why, ...sectionsRaw.why },
       tower: { ...DEFAULT_SECTIONS.tower, ...sectionsRaw.tower },

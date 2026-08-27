@@ -186,6 +186,17 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
     setSaved(false);
   }
 
+  function updateHeroFeature(index: number, patch: Partial<HomepageContent["sections"]["heroFeatures"][number]>) {
+    setContent((c) => ({
+      ...c,
+      sections: {
+        ...c.sections,
+        heroFeatures: c.sections.heroFeatures.map((f, i) => (i === index ? { ...f, ...patch } : f)),
+      },
+    }));
+    setSaved(false);
+  }
+
   function updateHighlights(patch: Partial<HomepageContent["sections"]["highlights"]>) {
     setContent((c) => ({
       ...c,
@@ -402,6 +413,25 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
               <Field label="Secondary button link">
                 <input value={content.heroCtaSecondaryHref} onChange={(e) => update("heroCtaSecondaryHref", e.target.value)} className={inputClass} />
               </Field>
+            </div>
+            <p className="mt-2 text-xs font-medium text-stone-500">Trust badges (the 4-item strip below the hero photo — icons are fixed, only the text is editable)</p>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {content.sections.heroFeatures.map((feature, i) => (
+                <div key={i} className="space-y-2 rounded-lg border border-stone-200 p-3">
+                  <input
+                    value={feature.title}
+                    onChange={(e) => updateHeroFeature(i, { title: e.target.value })}
+                    placeholder="Badge title"
+                    className={inputClass}
+                  />
+                  <input
+                    value={feature.body}
+                    onChange={(e) => updateHeroFeature(i, { body: e.target.value })}
+                    placeholder="Badge description"
+                    className={inputClass}
+                  />
+                </div>
+              ))}
             </div>
           </SectionCard>
 

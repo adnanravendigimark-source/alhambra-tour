@@ -1,6 +1,31 @@
 import SafeImage from "./SafeImage";
 import { getHomepageContent } from "@/lib/homepage";
 
+// Fixed icons for the 4 trust badges below the hero photo, matched by index
+// to content.sections.heroFeatures (title/body text is admin-editable, the
+// icon glyphs themselves are not — see the HeroFeatureItem comment in
+// lib/homepage.ts for why).
+const HERO_FEATURE_ICONS = [
+  <svg key="tickets" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+    <rect x="3" y="4" width="18" height="16" rx="2" strokeLinecap="round" />
+    <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
+  </svg>,
+  <svg key="guides" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>,
+  <svg key="skip-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>,
+  <svg key="support" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+  </svg>,
+];
+
 export default async function Hero() {
   const content = await getHomepageContent();
 
@@ -129,66 +154,26 @@ export default async function Hero() {
         </div>
       </div>
 
-      {/* Feature Highlights Bar (Below Hero Image) */}
+      {/* Feature Highlights Bar (Below Hero Image) — titles/body text come
+          from the admin's "Hero trust badges" fields (content.sections.
+          heroFeatures); the 4 icons themselves stay fixed since each is
+          matched to a badge by index. */}
       <div className="border-t border-[#E5D6BE] bg-[#FAFAF8] py-7 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {/* Item 1 */}
-          <div className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E5D6BE]/50 text-[#B8863B]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-                <rect x="3" y="4" width="18" height="16" rx="2" strokeLinecap="round" />
-                <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="font-bold text-sm text-[#0F5C56]">Instant E-Tickets</h4>
-              <p className="text-xs text-[#29302A]/80 mt-0.5">Get your tickets instantly by email.</p>
-            </div>
-          </div>
-
-          {/* Item 2 */}
-          <div className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E5D6BE]/50 text-[#B8863B]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="font-bold text-sm text-[#0F5C56]">Expert Local Guides</h4>
-              <p className="text-xs text-[#29302A]/80 mt-0.5">Official guides with in-depth knowledge.</p>
-            </div>
-          </div>
-
-          {/* Item 3 */}
-          <div className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E5D6BE]/50 text-[#B8863B]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="font-bold text-sm text-[#0F5C56]">Skip the Line</h4>
-              <p className="text-xs text-[#29302A]/80 mt-0.5">Save time with priority access.</p>
-            </div>
-          </div>
-
-          {/* Item 4 */}
-          <div className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E5D6BE]/50 text-[#B8863B]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="font-bold text-sm text-[#0F5C56]">24/7 Support</h4>
-              <p className="text-xs text-[#29302A]/80 mt-0.5">We're here to help you before and during your visit.</p>
-            </div>
-          </div>
+          {HERO_FEATURE_ICONS.map((icon, i) => {
+            const feature = content.sections.heroFeatures[i];
+            return (
+              <div key={i} className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#E5D6BE]/60 shadow-xs">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E5D6BE]/50 text-[#B8863B]">
+                  {icon}
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-[#0F5C56]">{feature.title}</h4>
+                  <p className="text-xs text-[#29302A]/80 mt-0.5">{feature.body}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
