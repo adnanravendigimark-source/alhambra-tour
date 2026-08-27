@@ -32,7 +32,7 @@ export default async function Hero() {
   return (
     <section id="top" className="relative w-full bg-[#FAFAF8] text-[#29302A] overflow-hidden">
       {/* Background Hero Image & Smooth Gradient Blending */}
-      <div className="relative min-h-[580px] lg:min-h-[640px] flex items-center">
+      <div className="relative min-h-screen flex items-center">
         {/* Right side image container */}
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5">
           <SafeImage
