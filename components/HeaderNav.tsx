@@ -9,10 +9,7 @@ export default function HeaderNav({ links }: { links?: NavLink[] }) {
 
   const defaultLinks: NavLink[] = [
     { label: "Home", href: "/" },
-    { label: "Tours", href: "/#tours" },
     { label: "Tickets", href: "/#prices" },
-    { label: "Plan Your Visit", href: "/#practical" },
-    { label: "What to Expect", href: "/#highlights" },
     { label: "Blog", href: "/blog" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
