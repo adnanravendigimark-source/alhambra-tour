@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SafeImage from "@/components/SafeImage";
 import { getAboutPage } from "@/lib/about";
-import { resolveRobots, resolveCanonical, resolveOg } from "@/lib/seo";
+import { resolveRobots, resolveCanonical, resolveOg, buildBreadcrumbJsonLd } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -31,9 +31,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const about = await getAboutPage();
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }]);
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <Header />
       <main>
         {/* Hero banner */}
@@ -64,7 +66,7 @@ export default async function AboutPage() {
                 </li>
               </ol>
             </nav>
-            <span className="mt-4 inline-block text-xs font-bold uppercase tracking-widest text-sky-300">
+            <span className="mt-4 inline-block text-xs font-bold uppercase tracking-widest text-[#D4AF6A]">
               {about.heroEyebrow}
             </span>
             <h1 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">

@@ -7,11 +7,17 @@ import { getBlogSeoSettings } from "@/lib/settings";
 import { getAboutPage } from "@/lib/about";
 import { getContactPage } from "@/lib/contact";
 
-export const dynamic = "force-dynamic";
+// Revalidate hourly instead of force-dynamic. This route fires 6 parallel DB
+// queries on every hit — under force-dynamic that means every single crawl
+// re-runs all 6 live, and an occasional slow/timed-out query made Googlebot's
+// fetch fail with "Sitemap could not be read" in Search Console (same root
+// cause found and fixed on bosphorus-boat-cruise). Revalidating on a 1hr
+// cache means the sitemap is served from cache almost every request, with
+// content still fresh within an hour of any admin edit.
+export const revalidate = 3600;
 
-// Auto-generated at request time (this route is dynamic by nature — it
-// reads live blog posts from the database) and served at /sitemap.xml.
-// Submit that URL in Google Search Console once the site is live.
+// Served at /sitemap.xml. Submit that URL in Google Search Console once the
+// site is live.
 //
 // A URL only belongs in the sitemap if it is indexable and do-follow (noIndex: false, noFollow: false).
 // Every page is index/follow by default; a page only drops out of the sitemap

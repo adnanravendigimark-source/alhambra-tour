@@ -44,9 +44,9 @@
     "typescript": "^5.5.2"
   },
   "browserslist": [
-    "> 0.3%",
-    "not dead",
-    "not op_mini all",
-    "not ie 11"
+    "chrome >= 90",
+    "edge >= 90",
+    "firefox >= 88",
+    "safari >= 14"
   ]
 }

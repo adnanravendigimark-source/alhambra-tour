@@ -11,7 +11,7 @@ import { CalendarIcon, ClockPayIcon, TicketIcon } from "@/components/icons";
 import { getPost, getPosts } from "@/lib/posts";
 import { getHomepageContent } from "@/lib/homepage";
 import { getRedirectTarget } from "@/lib/redirects";
-import { resolveRobots, resolveCanonical, resolveOg, buildArticleJsonLd } from "@/lib/seo";
+import { resolveRobots, resolveCanonical, resolveOg, buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import { extractTableOfContents } from "@/lib/tableOfContents";
 
@@ -92,6 +92,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
     siteName: "Alhambra Tour",
   });
 
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
+
   const { toc: headingToc, html: contentHtml } = extractTableOfContents(post.content);
   const toc = post.quickAnswer.trim()
     ? [{ id: "quick-answer", text: s.quickAnswerLabel, level: 2 as const }, ...headingToc]
@@ -101,6 +107,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <Header />
       <main className="min-h-screen bg-stone-50">
         <div className="mx-auto max-w-6xl px-4 pt-24 sm:px-6 sm:pt-28">
@@ -127,7 +134,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
           {/* Post Header */}
           <div className="mt-5">
-            <span className="inline-block rounded-md bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-blue-600">
+            <span className="inline-block rounded-md bg-[#D6E8E4] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#0F5C56]">
               {post.category}
             </span>
 
@@ -152,7 +159,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 {post.readTime}
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 text-[10px] font-bold text-white">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#0F5C56] to-[#B8863B] text-[10px] font-bold text-white">
                   {author.initials}
                 </span>
                 <span className="font-semibold text-slate-900">
@@ -191,9 +198,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
               />
 
               {/* Bottom Article CTA Card */}
-              <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-stone-200/80 bg-gradient-to-br from-sky-50/60 via-white to-blue-50/40 p-6 text-center sm:flex-row sm:text-left shadow-sm">
+              <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-stone-200/80 bg-gradient-to-br from-[#D6E8E4]/50 via-white to-[#FAFAF8] p-6 text-center sm:flex-row sm:text-left shadow-sm">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-canal-blue">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#D6E8E4] text-[#0F5C56]">
                     <TicketIcon className="h-6 w-6" />
                   </div>
                   <div>
@@ -208,7 +215,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
                 <Link
                   href={post.ctaButtonHref}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:scale-[1.02]"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#0F5C56] hover:bg-[#0B4640] px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:scale-[1.02]"
                 >
                   {post.ctaButtonText}
                 </Link>

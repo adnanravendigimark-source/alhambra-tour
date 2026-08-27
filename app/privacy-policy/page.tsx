@@ -29,7 +29,8 @@ export default async function PrivacyPolicyPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20">
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Privacy Policy", path: "/privacy-policy" }]} />
+      <main className="mx-auto max-w-3xl px-4 pt-6 pb-16 sm:px-6 sm:pb-20">
         <h1 className="font-display text-3xl font-bold text-stone-900 sm:text-4xl">{policy.title}</h1>
         {policy.lastUpdated && (
           <p className="mt-2 text-sm text-stone-900/50">{policy.lastUpdatedLabel}{policy.lastUpdated}</p>

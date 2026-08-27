@@ -80,7 +80,7 @@ export default function BlogSearchGrid({
           Showing {sortedPosts.length === 0 ? 0 : start + 1} –{" "}
           {Math.min(start + PAGE_SIZE, sortedPosts.length)} of {sortedPosts.length} articles
           {selectedCategory && selectedCategory !== "All" && (
-            <span className="ml-2 inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700">
+            <span className="ml-2 inline-flex items-center gap-1 rounded-md bg-[#D6E8E4] px-2 py-0.5 text-[11px] font-semibold text-[#0F5C56]">
               {selectedCategory}
               <button
                 type="button"

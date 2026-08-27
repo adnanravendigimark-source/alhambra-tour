@@ -32,5 +32,18 @@ export function extractTableOfContents(html: string): { toc: TocItem[]; html: st
     return `<h${level} id="${id}"${attrs || ""}>${inner}</h${level}>`;
   });
 
-  return { toc, html: withIds };
+  // Rich-text article images come back from the Tiptap editor as plain
+  // <img src=... alt=...> tags with no sizing/loading hints, so they bypass
+  // next/image entirely and ship as full-size, eagerly-loaded requests —
+  // a real PageSpeed cost on image-heavy guides. Since these are inserted
+  // freeform mid-article (not a fixed-size component), we can't swap them
+  // for next/image without knowing their real dimensions, but we can still
+  // defer offscreen ones and hint the browser to decode them off the main
+  // thread.
+  const withLazyImages = withIds.replace(/<img((?:\s+[^>]*)?)>/gi, (match, attrs) => {
+    if (/\sloading=/.test(attrs)) return match;
+    return `<img${attrs} loading="lazy" decoding="async">`;
+  });
+
+  return { toc, html: withLazyImages };
 }

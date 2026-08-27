@@ -242,6 +242,15 @@ export async function savePost(post: Post): Promise<void> {
 
 export async function deletePost(slug: string): Promise<void> {
   await sql`DELETE FROM posts WHERE slug = ${slug}`;
+  // Also drop any redirect rows pointing at this now-deleted slug (either
+  // direction), so a visitor hitting an old renamed-away URL doesn't get
+  // 301-redirected to a slug that no longer exists (a 301-to-404 chain).
+  // Fails soft, matching lib/redirects.ts, in case the schema is behind.
+  try {
+    await sql`DELETE FROM post_redirects WHERE old_slug = ${slug} OR new_slug = ${slug}`;
+  } catch {
+    // Fail soft if schema is behind
+  }
 }
 
 export async function savePosts(posts: Post[]): Promise<void> {

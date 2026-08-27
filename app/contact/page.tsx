@@ -31,9 +31,10 @@ export default async function ContactPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-24">
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
+      <main className="mx-auto max-w-3xl px-4 pt-6 pb-16 sm:px-6 sm:pb-24">
         <div className="text-center">
-          <span className="inline-block rounded-md bg-blue-50 border border-blue-200/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600">
+          <span className="inline-block rounded-md bg-[#D6E8E4] border border-[#0F5C56]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0F5C56]">
             {contact.heroEyebrow}
           </span>
           <h1 className="mt-3 font-display text-3xl font-bold text-slate-900 sm:text-4xl">
@@ -46,15 +47,15 @@ export default async function ContactPage() {
         </div>
 
         {/* Primary email card */}
-        <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-sky-200/80 bg-gradient-to-br from-sky-50/60 via-white to-blue-50/40 p-10 text-center shadow-md">
-          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/25">
+        <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-[#D6E8E4] bg-gradient-to-br from-[#D6E8E4]/50 via-white to-[#FAFAF8] p-10 text-center shadow-md">
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0F5C56] text-white shadow-lg shadow-[#0F5C56]/25">
             <MailIcon className="h-7 w-7" />
           </span>
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{contact.emailLabel}</p>
             <a
               href={`mailto:${contact.email}`}
-              className="mt-1 block break-all font-display text-2xl font-bold text-blue-600 hover:underline"
+              className="mt-1 block break-all font-display text-2xl font-bold text-[#0F5C56] hover:underline"
             >
               {contact.email}
             </a>
@@ -68,7 +69,7 @@ export default async function ContactPage() {
             const Icon = getIconComponent(icon);
             return (
               <div key={title} className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm text-center sm:text-left">
-                <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 sm:mx-0">
+                <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#D6E8E4] text-[#0F5C56] sm:mx-0">
                   <Icon className="h-5 w-5" />
                 </span>
                 <p className="mt-4 text-sm font-bold text-slate-900">{title}</p>
@@ -86,11 +87,11 @@ export default async function ContactPage() {
           dangerouslySetInnerHTML={{ __html: contact.footerNote }}
         />
 
-        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-r from-canal-navy to-slate-900 p-8 text-center text-white shadow-xl">
+        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-r from-[#0F5C56] to-[#29302A] p-8 text-center text-white shadow-xl">
           <p className="text-base font-bold">{contact.ctaHeading}</p>
           <a
             href="/#tours"
-            className="rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 px-7 py-3 text-sm font-bold text-white shadow-md transition hover:scale-[1.02]"
+            className="rounded-xl bg-[#B8863B] hover:bg-[#96702E] px-7 py-3 text-sm font-bold text-white shadow-md transition hover:scale-[1.02]"
           >
             {contact.ctaButtonLabel} →
           </a>

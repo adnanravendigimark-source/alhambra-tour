@@ -31,7 +31,7 @@ export default function ColorField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={fallback}
-          className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-basilica-teal focus:outline-none focus:ring-1 focus:ring-basilica-teal"
+          className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-[#0F5C56] focus:outline-none focus:ring-1 focus:ring-[#0F5C56]"
         />
       </div>
     </div>

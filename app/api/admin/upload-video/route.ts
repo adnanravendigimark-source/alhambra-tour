@@ -7,12 +7,15 @@ import { recordMediaUpload } from "@/lib/media";
 // for why.
 export const dynamic = "force-dynamic";
 
-// Saves an uploaded video to Vercel Blob storage and returns its public
-// URL — used ONLY by the hero background video field (components/Hero.tsx,
-// via VideoUploadField.tsx). Kept as a separate endpoint from
-// app/api/admin/upload/route.ts (images) rather than widening that one,
-// since every other upload field in the admin expects an image and the
-// size/type limits here are deliberately different.
+// Saves an uploaded video to Vercel Blob storage and returns its public URL.
+// NOTE: not currently wired to any admin field — the hero background video
+// feature (components/admin/VideoUploadField.tsx) was removed from the
+// Homepage form since Hero.tsx has no video rendering, so this endpoint is
+// presently unreachable from the UI. Left in place (harmless, no DB writes
+// depend on it) rather than deleted, in case hero video support is added
+// back later. Kept as a separate endpoint from app/api/admin/upload/route.ts
+// (images) since every other upload field in the admin expects an image and
+// the size/type limits here are deliberately different.
 export async function POST(req: Request) {
   if (!process.env.BLOB_READ_WRITE_TOKEN) {
     return NextResponse.json(

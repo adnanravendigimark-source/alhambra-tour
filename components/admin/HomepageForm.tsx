@@ -1038,10 +1038,10 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
 
           <SectionCard title="Brand colors" description="Changes these colors everywhere they're used across the whole site — buttons, links, hero background, ratings. Leave a field blank to keep the default.">
             <div className="grid gap-5 sm:grid-cols-2">
-              <ColorField label="Primary (buttons)" value={content.theme.primary} fallback="#e8823a" onChange={(hex) => updateTheme({ primary: hex })} />
-              <ColorField label="Secondary (links, accents)" value={content.theme.secondary} fallback="#0c7489" onChange={(hex) => updateTheme({ secondary: hex })} />
-              <ColorField label="Dark (hero background)" value={content.theme.dark} fallback="#0a2e35" onChange={(hex) => updateTheme({ dark: hex })} />
-              <ColorField label="Accent (ratings, badges)" value={content.theme.accent} fallback="#e0a94a" onChange={(hex) => updateTheme({ accent: hex })} />
+              <ColorField label="Primary (buttons)" value={content.theme.primary} fallback="#0F5C56" onChange={(hex) => updateTheme({ primary: hex })} />
+              <ColorField label="Secondary (links, accents)" value={content.theme.secondary} fallback="#B8863B" onChange={(hex) => updateTheme({ secondary: hex })} />
+              <ColorField label="Dark (hero background)" value={content.theme.dark} fallback="#29302A" onChange={(hex) => updateTheme({ dark: hex })} />
+              <ColorField label="Accent (ratings, badges)" value={content.theme.accent} fallback="#D4AF6A" onChange={(hex) => updateTheme({ accent: hex })} />
             </div>
           </SectionCard>
 

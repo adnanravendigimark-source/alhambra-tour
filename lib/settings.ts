@@ -20,7 +20,7 @@ const DEFAULT_SETTINGS: BlogSeoSettings = {
   noFollow: false,
   ogTitle: "",
   ogDescription: "",
-  ogImage: "",
+  ogImage: "/images/hero-alhambra.jpg",
 };
 
 export async function getBlogSeoSettings(): Promise<BlogSeoSettings> {
@@ -36,7 +36,7 @@ export async function getBlogSeoSettings(): Promise<BlogSeoSettings> {
       noFollow: !!row.blog_no_follow,
       ogTitle: row.blog_og_title || "",
       ogDescription: row.blog_og_description || "",
-      ogImage: row.blog_og_image || "",
+      ogImage: row.blog_og_image || DEFAULT_SETTINGS.ogImage,
     };
   } catch {
     return DEFAULT_SETTINGS;

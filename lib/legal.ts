@@ -49,7 +49,7 @@ const DEFAULT_PRIVACY_POLICY: PrivacyPolicy = {
   metaDescription: "Privacy Policy for Alhambra Tour — how we collect, use, and protect your information.",
   ogTitle: "",
   ogDescription: "",
-  ogImage: "",
+  ogImage: "/images/hero-alhambra.jpg",
 };
 
 export async function getPrivacyPolicy(): Promise<PrivacyPolicy> {
@@ -76,7 +76,7 @@ export async function getPrivacyPolicy(): Promise<PrivacyPolicy> {
       metaDescription: row.meta_description || DEFAULT_PRIVACY_POLICY.metaDescription,
       ogTitle: row.og_title || "",
       ogDescription: row.og_description || "",
-      ogImage: row.og_image || "",
+      ogImage: row.og_image || DEFAULT_PRIVACY_POLICY.ogImage,
     };
   } catch {
     return DEFAULT_PRIVACY_POLICY;

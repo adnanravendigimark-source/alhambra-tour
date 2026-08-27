@@ -75,7 +75,7 @@ export default function Logo({
       <Link href="/" className={`inline-flex flex-col items-center gap-2 ${className}`}>
         {customSrc ? (
           <span className="relative block h-16 w-[200px]">
-            <Image src={customSrc} alt={alt} fill sizes="200px" className="object-contain" priority />
+            <Image src={customSrc} alt={alt} fill quality={75} sizes="200px" className="object-contain" priority />
           </span>
         ) : (
           alhambraGraphic("h-14 w-14")
@@ -96,7 +96,7 @@ export default function Logo({
     <Link href="/" className={`group inline-flex items-center gap-3.5 ${className}`}>
       {customSrc ? (
         <span className="relative block h-10 w-[130px] shrink-0 overflow-hidden">
-          <Image src={customSrc} alt={alt} fill priority sizes="130px" className="object-contain" />
+          <Image src={customSrc} alt={alt} fill priority quality={75} sizes="130px" className="object-contain" />
         </span>
       ) : (
         alhambraGraphic("h-11 w-11")
