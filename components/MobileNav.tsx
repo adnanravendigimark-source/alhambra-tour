@@ -61,7 +61,7 @@ export default function MobileNav({
                   key={link.href + link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-[#E5D6BE]/60 py-3.5 text-base font-semibold text-[#29302A] transition hover:text-[#C8643F] last:border-b-0"
+                  className="border-b border-[#E5D6BE]/60 py-3.5 text-base font-semibold text-[#29302A] transition hover:text-[#B8863B] last:border-b-0"
                 >
                   {link.label}
                 </Link>
@@ -71,7 +71,7 @@ export default function MobileNav({
               <Link
                 href={ctaHref || "/#tours"}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-[#263D2A] hover:bg-[#1e3021] px-5 py-3.5 text-center text-sm font-bold text-white shadow-md uppercase tracking-wider"
+                className="block rounded-xl bg-[#0F5C56] hover:bg-[#0B4640] px-5 py-3.5 text-center text-sm font-bold text-white shadow-md uppercase tracking-wider"
               >
                 {ctaText || "BOOK TICKETS"}
               </Link>

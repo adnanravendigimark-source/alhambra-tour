@@ -34,7 +34,7 @@ export default async function BlogIndexPage() {
       <Header />
       <main className="min-h-screen bg-[#F8F3E9]">
         {/* Blog Hero Banner */}
-        <section className="relative overflow-hidden bg-[#263D2A] text-white">
+        <section className="relative overflow-hidden bg-[#0F5C56] text-white">
           <div className="absolute inset-0">
             <SafeImage
               src={heroImage || "/images/hero-alhambra.jpg"}
@@ -45,10 +45,10 @@ export default async function BlogIndexPage() {
               sizes="100vw"
               className="object-cover object-center opacity-30"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#263D2A] via-[#263D2A]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F5C56] via-[#0F5C56]/80 to-transparent" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 text-center sm:text-left">
+          <div className="relative mx-auto max-w-7xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20 lg:px-8 text-center sm:text-left">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="text-xs font-medium text-[#E5D6BE]/80">
               <ol className="flex items-center justify-center sm:justify-start gap-1.5">
@@ -64,7 +64,7 @@ export default async function BlogIndexPage() {
               </ol>
             </nav>
 
-            <span className="mt-4 inline-block rounded-md bg-white/10 border border-white/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#C79A52]">
+            <span className="mt-4 inline-block rounded-md bg-white/10 border border-white/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#D4AF6A]">
               {s.eyebrow}
             </span>
 
@@ -75,7 +75,7 @@ export default async function BlogIndexPage() {
             {/* Decorative Divider */}
             <div className="mt-5 flex items-center justify-center sm:justify-start gap-3 max-w-xs mx-auto sm:mx-0">
               <span className="h-px flex-1 bg-white/30" />
-              <StarIcon className="h-4 w-4 text-[#C79A52]" />
+              <StarIcon className="h-4 w-4 text-[#D4AF6A]" />
               <span className="h-px flex-1 bg-white/30" />
             </div>
 

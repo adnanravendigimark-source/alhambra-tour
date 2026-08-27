@@ -22,8 +22,8 @@ export default async function AdminDashboardLayout({ children }: { children: Rea
       sessionEmail={session?.email}
       sessionRole={session?.role}
       brandName="Alhambra Tour"
-      brandColorClass="text-[#C8643F]"
-      avatarColorClass="bg-[#263D2A]"
+      brandColorClass="text-[#B8863B]"
+      avatarColorClass="bg-[#0F5C56]"
     >
       {children}
     </AdminShell>

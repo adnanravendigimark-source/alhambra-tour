@@ -60,11 +60,11 @@ export default function AdminShell({
               purpose-sized brand mark rather than the full <Logo /> — that
               component's wordmark needs more width than 256px leaves room
               for. Same Andalusian tower/arch glyph as Logo.tsx's icon and
-              app/icon.tsx's favicon, on the same charcoal-to-terracotta
-              gradient badge, so all three brand marks (public header, admin
+              app/icon.tsx's favicon, on the same teal-to-gold gradient
+              badge, so all three brand marks (public header, admin
               sidebar, browser tab) match. */}
           <div className="flex items-center gap-2.5 border-b border-white/10 px-5 py-5">
-            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#263D2A] to-[#C8643F] shadow-md">
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#0F5C56] to-[#B8863B] shadow-md">
               <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
                 <path
                   d="M8 20V12H13V14H18V12H23V14H28V12H33V14H38V12H43V14H48V20"
@@ -74,7 +74,7 @@ export default function AdminShell({
                   strokeLinejoin="round"
                 />
                 <rect x="10" y="20" width="36" height="28" rx="1" fill="#F8F3E9" />
-                <path d="M24 48V37C24 34 25.5 32 28 32C30.5 32 32 34 32 37V48H24Z" fill="#263D2A" />
+                <path d="M24 48V37C24 34 25.5 32 28 32C30.5 32 32 34 32 37V48H24Z" fill="#0F5C56" />
                 <path d="M28 4L30 8L34 10L30 12L28 16L26 12L22 10L26 8L28 4Z" fill="#F8F3E9" />
               </svg>
             </span>

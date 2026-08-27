@@ -37,7 +37,7 @@ export default function BlogIndexSidebar({
   return (
     <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
       {/* Search Widget */}
-      <div className="flex rounded-xl border border-[#E5D6BE] bg-white overflow-hidden shadow-xs focus-within:border-[#263D2A]">
+      <div className="flex rounded-xl border border-[#E5D6BE] bg-white overflow-hidden shadow-xs focus-within:border-[#0F5C56]">
         <input
           type="text"
           value={searchQuery || ""}
@@ -48,7 +48,7 @@ export default function BlogIndexSidebar({
         <button
           type="button"
           aria-label="Search"
-          className="flex items-center justify-center bg-[#263D2A] px-3.5 text-white transition hover:bg-[#1e3021]"
+          className="flex items-center justify-center bg-[#0F5C56] px-3.5 text-white transition hover:bg-[#0B4640]"
         >
           <SearchIcon className="h-4 w-4" />
         </button>
@@ -57,7 +57,7 @@ export default function BlogIndexSidebar({
       {/* Categories Widget */}
       {categories.length > 0 && (
         <div className="rounded-2xl border border-[#E5D6BE] bg-white p-5 shadow-xs">
-          <p className="font-serif text-base font-bold text-[#263D2A]">Categories</p>
+          <p className="font-serif text-base font-bold text-[#0F5C56]">Categories</p>
           <div className="mt-3.5 space-y-1">
             {categories.map((cat) => {
               const isSelected = selectedCategory?.toLowerCase() === cat.name.toLowerCase();
@@ -68,12 +68,12 @@ export default function BlogIndexSidebar({
                   onClick={() => onSelectCategory && onSelectCategory(isSelected ? "All" : cat.name)}
                   className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-xs font-semibold transition ${
                     isSelected
-                      ? "bg-[#C8643F]/10 text-[#C8643F] font-bold border border-[#C8643F]/30"
-                      : "text-[#29302A] hover:bg-[#F8F3E9] hover:text-[#C8643F]"
+                      ? "bg-[#B8863B]/10 text-[#B8863B] font-bold border border-[#B8863B]/30"
+                      : "text-[#29302A] hover:bg-[#F8F3E9] hover:text-[#B8863B]"
                   }`}
                 >
                   <span>{cat.name}</span>
-                  <span className="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#F8F3E9] px-1.5 text-[10px] font-bold text-[#263D2A]">
+                  <span className="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#F8F3E9] px-1.5 text-[10px] font-bold text-[#0F5C56]">
                     {cat.count}
                   </span>
                 </button>
@@ -86,7 +86,7 @@ export default function BlogIndexSidebar({
       {/* Popular Articles Widget */}
       {popular.length > 0 && (
         <div className="rounded-2xl border border-[#E5D6BE] bg-white p-5 shadow-xs">
-          <p className="font-serif text-base font-bold text-[#263D2A]">Popular Articles</p>
+          <p className="font-serif text-base font-bold text-[#0F5C56]">Popular Articles</p>
           <div className="mt-4 space-y-3.5">
             {popular.map((post) => (
               <Link
@@ -105,11 +105,11 @@ export default function BlogIndexSidebar({
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="line-clamp-2 text-xs font-bold leading-snug text-[#263D2A] transition-colors group-hover:text-[#C8643F]">
+                  <p className="line-clamp-2 text-xs font-bold leading-snug text-[#0F5C56] transition-colors group-hover:text-[#B8863B]">
                     {post.title}
                   </p>
                   <p className="mt-1 flex items-center gap-1 text-[11px] text-[#29302A]/60 font-medium">
-                    <CalendarIcon className="h-3 w-3 text-[#C8643F]" />
+                    <CalendarIcon className="h-3 w-3 text-[#B8863B]" />
                     {formatDate(post.date)}
                   </p>
                 </div>
@@ -120,15 +120,15 @@ export default function BlogIndexSidebar({
       )}
 
       {/* Book Your Alhambra Tour Promo Card */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#C79A52]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
-        <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#263D2A] text-[#C79A52]">
+      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
+        <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F5C56] text-[#D4AF6A]">
           <TicketIcon className="h-5 w-5" />
         </div>
-        <p className="mt-3.5 font-serif text-base font-bold text-[#263D2A]">{ctaHeading}</p>
+        <p className="mt-3.5 font-serif text-base font-bold text-[#0F5C56]">{ctaHeading}</p>
         <p className="mt-1.5 text-xs leading-relaxed text-[#29302A]/80">{ctaBody}</p>
         <a
           href="/#tours"
-          className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-[#263D2A] hover:bg-[#C8643F] px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-[#0F5C56] hover:bg-[#B8863B] px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
         >
           {ctaButtonText}
         </a>

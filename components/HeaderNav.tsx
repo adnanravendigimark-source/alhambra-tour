@@ -30,10 +30,10 @@ export default function HeaderNav({ links }: { links?: NavLink[] }) {
           <Link
             key={link.href + link.label}
             href={link.href}
-            className={`relative py-1.5 transition-colors hover:text-[#C8643F] ${
+            className={`relative py-1.5 transition-colors hover:text-[#B8863B] ${
               isActive
-                ? "text-[#C8643F] font-bold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#C8643F] after:rounded-full"
-                : "text-[#29302A] hover:text-[#C8643F]"
+                ? "text-[#B8863B] font-bold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#B8863B] after:rounded-full"
+                : "text-[#29302A] hover:text-[#B8863B]"
             }`}
           >
             {link.label}

@@ -25,10 +25,10 @@ body {
 
 /* Alhambra Tour brand-color CSS variables — space-separated RGB triplets */
 :root {
-  --color-canal-primary: 38 61 42;     /* #263D2A - Deep Olive Green */
-  --color-canal-blue: 200 100 63;      /* #C8643F - Terracotta */
+  --color-canal-primary: 15 92 86;    /* #0F5C56 - Deep Andalusian Teal */
+  --color-canal-blue: 184 134 59;     /* #B8863B - Antique Gold */
   --color-canal-ink: 41 48 42;        /* #29302A - Charcoal */
-  --color-gold-400: 199 154 82;       /* #C79A52 - Muted Gold */
+  --color-gold-400: 212 175 106;      /* #D4AF6A - Warm Gold */
 }
 
 /* Shared typography for admin-entered rich text */

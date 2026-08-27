@@ -19,12 +19,12 @@ export default async function FeaturedTour() {
           <SafeImage src={tour.image} alt={tour.imageAlt} fill quality={75} sizes="48px" className="object-cover" />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-xs font-bold leading-tight text-[#263D2A]">{tour.title}</p>
+          <p className="truncate text-xs font-bold leading-tight text-[#0F5C56]">{tour.title}</p>
           <div className="mt-0.5 flex items-center gap-2 text-[11px] text-[#29302A]/80">
             <StarRating rating={tour.rating} showValue size="xs" />
             <span>·</span>
             <span>
-              from <span className="font-bold text-[#C8643F]">€{tour.price}</span>
+              from <span className="font-bold text-[#B8863B]">€{tour.price}</span>
             </span>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default async function FeaturedTour() {
           href={tour.href}
           target="_blank"
           rel="noopener nofollow sponsored"
-          className="shrink-0 rounded-xl bg-[#263D2A] hover:bg-[#1e3021] px-4 py-2 text-xs font-bold text-white shadow-xs"
+          className="shrink-0 rounded-xl bg-[#0F5C56] hover:bg-[#0B4640] px-4 py-2 text-xs font-bold text-white shadow-xs"
         >
           {bookNowText}
         </a>

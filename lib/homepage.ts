@@ -270,10 +270,10 @@ export const DEFAULT_FOOTER: FooterContent = {
 };
 
 export const DEFAULT_THEME: ThemeColors = {
-  primary: "#263D2A",   // Deep Olive Green
-  secondary: "#C8643F", // Terracotta Accent
+  primary: "#0F5C56",   // Deep Andalusian Teal
+  secondary: "#B8863B", // Antique Gold Accent
   dark: "#29302A",      // Charcoal Text & Night
-  accent: "#C79A52",    // Muted Gold Detail
+  accent: "#D4AF6A",    // Warm Gold Detail
 };
 
 export const DEFAULT_GALLERY: GalleryImage[] = [

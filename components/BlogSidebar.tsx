@@ -54,7 +54,7 @@ export default function BlogSidebar({
   return (
     <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
       {/* Search Bar */}
-      <form onSubmit={handleSearch} className="flex rounded-xl border border-[#E5D6BE] bg-white overflow-hidden shadow-xs focus-within:border-[#263D2A]">
+      <form onSubmit={handleSearch} className="flex rounded-xl border border-[#E5D6BE] bg-white overflow-hidden shadow-xs focus-within:border-[#0F5C56]">
         <input
           type="text"
           value={search}
@@ -65,7 +65,7 @@ export default function BlogSidebar({
         <button
           type="submit"
           aria-label="Search"
-          className="flex items-center justify-center bg-[#263D2A] px-3.5 text-white transition hover:bg-[#1e3021]"
+          className="flex items-center justify-center bg-[#0F5C56] px-3.5 text-white transition hover:bg-[#0B4640]"
         >
           <SearchIcon className="h-4 w-4" />
         </button>
@@ -77,7 +77,7 @@ export default function BlogSidebar({
       {/* Popular Articles */}
       {popular.length > 0 && (
         <div className="rounded-2xl border border-[#E5D6BE] bg-white p-5 shadow-xs">
-          <p className="font-serif text-xs font-bold uppercase tracking-wider text-[#263D2A]">
+          <p className="font-serif text-xs font-bold uppercase tracking-wider text-[#0F5C56]">
             POPULAR ARTICLES
           </p>
           <div className="mt-4 space-y-3.5">
@@ -98,11 +98,11 @@ export default function BlogSidebar({
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="line-clamp-2 text-xs font-bold leading-snug text-[#263D2A] transition-colors group-hover:text-[#C8643F]">
+                  <p className="line-clamp-2 text-xs font-bold leading-snug text-[#0F5C56] transition-colors group-hover:text-[#B8863B]">
                     {post.title}
                   </p>
                   <p className="mt-1 flex items-center gap-1 text-[11px] text-[#29302A]/60 font-medium">
-                    <CalendarIcon className="h-3 w-3 text-[#C8643F]" />
+                    <CalendarIcon className="h-3 w-3 text-[#B8863B]" />
                     {formatDate(post.date)}
                   </p>
                 </div>
@@ -113,15 +113,15 @@ export default function BlogSidebar({
       )}
 
       {/* Compare Alhambra Tours Promo Card */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#C79A52]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
-        <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#263D2A] text-[#C79A52]">
+      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF6A]/30 bg-gradient-to-br from-[#F8F3E9] via-white to-[#F8F3E9] p-6 text-center shadow-xs">
+        <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F5C56] text-[#D4AF6A]">
           <TicketIcon className="h-5 w-5" />
         </div>
-        <p className="mt-3.5 font-serif text-base font-bold text-[#263D2A]">{ctaHeading}</p>
+        <p className="mt-3.5 font-serif text-base font-bold text-[#0F5C56]">{ctaHeading}</p>
         <p className="mt-1.5 text-xs leading-relaxed text-[#29302A]/80">{ctaBody}</p>
         <a
           href="/#tours"
-          className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-[#263D2A] hover:bg-[#C8643F] px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-200 hover:scale-[1.02]"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-[#0F5C56] hover:bg-[#B8863B] px-5 py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-200 hover:scale-[1.02]"
         >
           {ctaButtonText}
         </a>
@@ -129,17 +129,17 @@ export default function BlogSidebar({
 
       {/* Newsletter Card */}
       <div className="rounded-2xl border border-[#E5D6BE] bg-white p-5 shadow-xs">
-        <p className="font-serif text-xs font-bold uppercase tracking-wider text-[#263D2A]">
+        <p className="font-serif text-xs font-bold uppercase tracking-wider text-[#0F5C56]">
           NEWSLETTER
         </p>
         <p className="mt-2 text-xs text-[#29302A]/80 leading-relaxed">
           Get Granada travel tips, Alhambra entry guides and insider advice straight to your inbox.
         </p>
         {subscribed ? (
-          <p className="mt-3 text-xs font-semibold text-[#263D2A]">✓ Thank you for subscribing!</p>
+          <p className="mt-3 text-xs font-semibold text-[#0F5C56]">✓ Thank you for subscribing!</p>
         ) : (
           <form onSubmit={handleSubscribe} className="mt-3 space-y-2">
-            <div className="flex rounded-lg border border-[#E5D6BE] bg-white overflow-hidden focus-within:border-[#263D2A]">
+            <div className="flex rounded-lg border border-[#E5D6BE] bg-white overflow-hidden focus-within:border-[#0F5C56]">
               <input
                 type="email"
                 required
@@ -151,7 +151,7 @@ export default function BlogSidebar({
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="flex items-center justify-center bg-[#263D2A] px-3 text-white transition hover:bg-[#1e3021]"
+                className="flex items-center justify-center bg-[#0F5C56] px-3 text-white transition hover:bg-[#0B4640]"
               >
                 →
               </button>
@@ -162,7 +162,7 @@ export default function BlogSidebar({
                 required
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="mt-0.5 rounded border-[#E5D6BE] text-[#263D2A] focus:ring-[#263D2A]"
+                className="mt-0.5 rounded border-[#E5D6BE] text-[#0F5C56] focus:ring-[#0F5C56]"
               />
               <span>I agree to receive travel updates.</span>
             </label>

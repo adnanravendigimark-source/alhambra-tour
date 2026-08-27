@@ -17,9 +17,9 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #263D2A 0%, #C8643F 100%)",
+          background: "linear-gradient(135deg, #0F5C56 0%, #B8863B 100%)",
           borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(38, 61, 42, 0.4)",
+          boxShadow: "0 4px 12px rgba(15, 92, 86, 0.4)",
         }}
       >
         <svg width="32" height="32" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ export default function Icon() {
             strokeLinejoin="round"
           />
           <rect x="10" y="20" width="36" height="28" rx="1" fill="#F8F3E9" />
-          <path d="M24 48V37C24 34 25.5 32 28 32C30.5 32 32 34 32 37V48H24Z" fill="#263D2A" />
+          <path d="M24 48V37C24 34 25.5 32 28 32C30.5 32 32 34 32 37V48H24Z" fill="#0F5C56" />
           <path d="M28 4L30 8L34 10L30 12L28 16L26 12L22 10L26 8L28 4Z" fill="#F8F3E9" />
         </svg>
       </div>

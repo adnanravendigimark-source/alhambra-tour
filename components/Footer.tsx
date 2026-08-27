@@ -5,7 +5,7 @@ import { getSiteChrome } from "@/lib/homepage";
 export default async function Footer() {
   const { header, footer } = await getSiteChrome();
   return (
-    <footer className="border-t border-[#1e3021] bg-[#263D2A] text-white">
+    <footer className="border-t border-[#0B4640] bg-[#0F5C56] text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -24,7 +24,7 @@ export default async function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-7">
             {footer.columns.map((column) => (
               <div key={column.title}>
-                <p className="text-xs font-bold uppercase tracking-widest text-[#C79A52]">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#D4AF6A]">
                   {column.title}
                 </p>
                 <ul className="mt-4 space-y-2.5 text-sm text-[#E5D6BE]">
@@ -40,7 +40,7 @@ export default async function Footer() {
             ))}
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#C79A52]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#D4AF6A]">
                 {footer.addressHeading}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-[#E5D6BE]">
