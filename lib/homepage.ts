@@ -193,8 +193,6 @@ export interface HomepageContent {
   heroSubheading: string;
   heroImage: string;
   heroImageAlt: string;
-  heroVideo: string;
-  heroGallery: GalleryImage[];
   heroCtaPrimaryText: string;
   heroCtaPrimaryHref: string;
   heroCtaSecondaryText: string;
@@ -272,29 +270,6 @@ export const DEFAULT_THEME: ThemeColors = {
   dark: "#29302A",      // Charcoal Text & Night
   accent: "#D4AF6A",    // Warm Gold Detail
 };
-
-export const DEFAULT_GALLERY: GalleryImage[] = [
-  {
-    src: "/images/nasrid-palaces-alhambra.jpg",
-    alt: "Intricate Moorish archway inside Nasrid Palaces at the Alhambra",
-    label: "Nasrid Palaces",
-  },
-  {
-    src: "/images/court-of-lions-alhambra.jpg",
-    alt: "Court of the Lions central fountain at the Alhambra in Granada",
-    label: "Court of Lions",
-  },
-  {
-    src: "/images/generalife-gardens-alhambra.jpg",
-    alt: "Generalife Gardens water pool and lush fountains at the Alhambra",
-    label: "Generalife Gardens",
-  },
-  {
-    src: "/images/alcazaba-alhambra.jpg",
-    alt: "Alcazaba military fortress watchtower overlooking Granada",
-    label: "Alcazaba Fortress",
-  },
-];
 
 export const DEFAULT_SECTIONS: HomepageSections = {
   tours: {
@@ -479,8 +454,6 @@ const DEFAULT_HOMEPAGE_CONTENT: HomepageContent = {
   heroSubheading: "Step Into the Soul of Andalusia",
   heroImage: "/images/hero-alhambra.jpg",
   heroImageAlt: "Panoramic sunset view of the Alhambra Palace in Granada Spain",
-  heroVideo: "",
-  heroGallery: DEFAULT_GALLERY,
   heroCtaPrimaryText: "EXPLORE TOURS",
   heroCtaPrimaryHref: "#tours",
   heroCtaSecondaryText: "VIEW TICKETS",
@@ -543,11 +516,6 @@ function rowToHomepage(row: any): HomepageContent {
     heroSubheading: row.hero_subheading || DEFAULT_HOMEPAGE_CONTENT.heroSubheading,
     heroImage: row.hero_image || DEFAULT_HOMEPAGE_CONTENT.heroImage,
     heroImageAlt: row.hero_image_alt || DEFAULT_HOMEPAGE_CONTENT.heroImageAlt,
-    heroVideo: row.hero_video || "",
-    heroGallery: (() => {
-      const g = parseReasons(row.hero_gallery);
-      return g.length ? (g as unknown as GalleryImage[]) : DEFAULT_GALLERY;
-    })(),
     heroCtaPrimaryText: row.hero_cta_primary_text || DEFAULT_HOMEPAGE_CONTENT.heroCtaPrimaryText,
     heroCtaPrimaryHref: row.hero_cta_primary_href || DEFAULT_HOMEPAGE_CONTENT.heroCtaPrimaryHref,
     heroCtaSecondaryText: row.hero_cta_secondary_text || DEFAULT_HOMEPAGE_CONTENT.heroCtaSecondaryText,
@@ -617,8 +585,6 @@ export async function saveHomepageCopy(data: {
   heroSubheading: string;
   heroImage: string;
   heroImageAlt: string;
-  heroVideo: string;
-  heroGallery: GalleryImage[];
   heroCtaPrimaryText: string;
   heroCtaPrimaryHref: string;
   heroCtaSecondaryText: string;
@@ -634,13 +600,13 @@ export async function saveHomepageCopy(data: {
   await sql`
     INSERT INTO homepage (
       id, hero_badge, hero_heading, hero_subheading, hero_image, hero_image_alt,
-      hero_video, hero_gallery, hero_cta_primary_text, hero_cta_primary_href,
+      hero_cta_primary_text, hero_cta_primary_href,
       hero_cta_secondary_text, hero_cta_secondary_href,
       meta_title, meta_description, focus_keyword,
       canonical_url, og_title, og_description, og_image
     ) VALUES (
       1, ${data.heroBadge}, ${data.heroHeading}, ${data.heroSubheading}, ${data.heroImage},
-      ${data.heroImageAlt}, ${data.heroVideo || ""}, ${JSON.stringify(data.heroGallery || [])}::jsonb,
+      ${data.heroImageAlt},
       ${data.heroCtaPrimaryText || ""}, ${data.heroCtaPrimaryHref || ""},
       ${data.heroCtaSecondaryText || ""}, ${data.heroCtaSecondaryHref || ""},
       ${data.metaTitle || ""}, ${data.metaDescription || ""}, ${data.focusKeyword || ""},
@@ -652,8 +618,6 @@ export async function saveHomepageCopy(data: {
       hero_subheading = EXCLUDED.hero_subheading,
       hero_image = EXCLUDED.hero_image,
       hero_image_alt = EXCLUDED.hero_image_alt,
-      hero_video = EXCLUDED.hero_video,
-      hero_gallery = EXCLUDED.hero_gallery,
       hero_cta_primary_text = EXCLUDED.hero_cta_primary_text,
       hero_cta_primary_href = EXCLUDED.hero_cta_primary_href,
       hero_cta_secondary_text = EXCLUDED.hero_cta_secondary_text,

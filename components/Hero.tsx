@@ -60,14 +60,25 @@ export default async function Hero() {
               {content.heroBadge || "ALHAMBRA TOUR"}
             </p>
 
-            {/* Main Headline */}
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[4.4rem] font-bold leading-[1.04] tracking-tight text-[#0F5C56] drop-shadow-xs mb-3">
+            {/* Main Headline — whitespace-pre-line preserves manual line
+                breaks typed into the admin's 2-row textarea (without it,
+                HTML collapses them into a single line, so the textarea's
+                second row had no visible effect on the live site). */}
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[4.4rem] font-bold leading-[1.04] tracking-tight text-[#0F5C56] drop-shadow-xs mb-3 whitespace-pre-line">
               {content.heroHeading || "Alhambra Tour"}
             </h1>
 
-            {/* Subtitle */}
+            {/* Subtitle — admin edits this via a rich-text editor, but it
+                was being interpolated as plain text here, so any HTML it
+                produces (e.g. a wrapping <p>, bold/italic) would have shown
+                up as literal visible tags instead of formatted text.
+                Stripped to plain text, matching how this same field is
+                already handled for the OG/meta description elsewhere in
+                the admin form (HomepageForm.tsx). */}
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-medium text-[#B8863B] leading-snug mb-5">
-              {content.heroSubheading || "Step Into the Soul of Andalusia"}
+              {content.heroSubheading
+                ? content.heroSubheading.replace(/<[^>]+>/g, "")
+                : "Step Into the Soul of Andalusia"}
             </h2>
 
             {/* Description */}
