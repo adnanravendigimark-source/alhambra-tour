@@ -19,9 +19,27 @@ export default async function Hero() {
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-[75%_center] lg:object-center"
           />
-          {/* Gradient Overlay for Mobile (bottom fade) and Desktop (left-to-right fade) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F8F3E9] via-[#F8F3E9]/85 via-50% to-transparent lg:hidden" />
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#F8F3E9] via-[#F8F3E9]/90 via-35% to-transparent" />
+          {/* Gradient Overlay for Mobile (bottom fade) and Desktop (left-to-right
+              fade) — only needs to be opaque right at the seam with the solid
+              cream panel behind the text; the rest of the photo (most of this
+              container) should stay fully clear so the Alhambra itself is
+              actually visible, not washed out under a haze of cream. Using an
+              inline gradient (not Tailwind's via-color / via-position
+              utilities) so the stop positions are exact and easy to verify. */}
+          <div
+            className="absolute inset-0 lg:hidden"
+            style={{
+              background:
+                "linear-gradient(to top, #F8F3E9 0%, rgba(248,243,233,0.55) 22%, transparent 42%)",
+            }}
+          />
+          <div
+            className="hidden lg:block absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, #F8F3E9 0%, rgba(248,243,233,0.65) 12%, rgba(248,243,233,0.15) 24%, transparent 38%)",
+            }}
+          />
         </div>
 
         {/* Hero Content Left Column — extra top padding (beyond the bottom
