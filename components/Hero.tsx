@@ -19,18 +19,25 @@ export default async function Hero() {
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-[75%_center] lg:object-center"
           />
-          {/* Gradient Overlay for Mobile (bottom fade) and Desktop (left-to-right
-              fade) — only needs to be opaque right at the seam with the solid
-              cream panel behind the text; the rest of the photo (most of this
-              container) should stay fully clear so the Alhambra itself is
-              actually visible, not washed out under a haze of cream. Using an
-              inline gradient (not Tailwind's via-color / via-position
-              utilities) so the stop positions are exact and easy to verify. */}
+          {/* Gradient Overlay — mobile and desktop need opposite treatment.
+              Desktop: the text sits in a separate solid-cream panel beside
+              the photo, so the overlay only needs to be opaque right at
+              that seam; the rest of the photo should stay fully clear.
+              Mobile: there's no side panel — the eyebrow/heading/subtitle/
+              paragraph/buttons/badges are all stacked directly on top of
+              the full-bleed photo, spanning nearly the whole section
+              height, so the overlay has to stay strong through almost that
+              entire height (previously it only covered the bottom ~40%,
+              leaving the heading/subtitle unreadable against the photo
+              behind them) and only ease off near the very top, where
+              there's just sky behind the floating header. Inline gradients
+              (not Tailwind's via-color / via-position utilities) so the
+              stop positions are exact and easy to verify. */}
           <div
             className="absolute inset-0 lg:hidden"
             style={{
               background:
-                "linear-gradient(to top, #F8F3E9 0%, rgba(248,243,233,0.55) 22%, transparent 42%)",
+                "linear-gradient(to top, #F8F3E9 0%, rgba(248,243,233,0.92) 60%, rgba(248,243,233,0.85) 85%, rgba(248,243,233,0.5) 100%)",
             }}
           />
           <div
