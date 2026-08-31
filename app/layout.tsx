@@ -122,14 +122,14 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-79QHG880Z2" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ME4EXC0FTM" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-79QHG880Z2');
+            gtag('config', 'G-ME4EXC0FTM');
           `}
         </Script>
       </head>
